@@ -1,0 +1,1 @@
+SO deployed as VM.

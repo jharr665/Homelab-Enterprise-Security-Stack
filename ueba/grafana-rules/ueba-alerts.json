@@ -1,0 +1,7 @@
+{
+  "rules": [
+    {
+      "alert": "Impossible Travel"
+    }
+  ]
+}
