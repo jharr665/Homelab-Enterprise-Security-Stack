@@ -1,2 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
+metadata: 
+  name: rekor-server
+spec:
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: rekor
+  template:
+    metadata: 
+      labels: 
+        app: rekor
+    spec:
+      securityContext:
+        runAsNonRoot: true   # ✅ Fix for Conftest
+      containers:
+        - name: rekor
+          image: ghcr.io/sigstore/rekor-server:latest
+          ports: 
+            - containerPort: 3000
